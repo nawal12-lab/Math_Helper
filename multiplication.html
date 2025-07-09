@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multiplication</title>
+  <style>
+    body{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color:  lightblue;
+    }
+    .num1, .num2 {
+      padding: 10px;
+      margin: 10px;
+      font-size: 1em;
+      border-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <input type="number" class="num1" placeholder="Enter first number" /> ×
+  <input type="number" class="num2" placeholder="Enter second number" />
+  <button id="multiplyBtn">Multiply</button>
+  <h2>Result: <span id="result"></span></h2>
+
+  <script>
+    document.getElementById('multiplyBtn').addEventListener('click', function() {
+      const num1 = parseFloat(document.querySelector('.num1').value);
+      const num2 = parseFloat(document.querySelector('.num2').value);
+
+      if (isNaN(num1) || isNaN(num2)) {
+        alert('Please enter valid numbers in both fields.');
+        return;
+      }
+
+      const product = num1 * num2;
+
+      document.getElementById('result').textContent = product;
+    });
+  </script>
+</body>
+</html>
